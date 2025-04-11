@@ -14,7 +14,7 @@ const User = () => {
 
     const fetchUserDetails = async () => {
       try {
-        const response = await fetch("http://localhost:5000/user-details", {
+        const response = await fetch(`${process.env.API_URL}/user-details`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

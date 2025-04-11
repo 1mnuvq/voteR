@@ -12,7 +12,7 @@ const Login = () => {
   
     if (collegeId === "admin_ronak" || collegeId === "user_ronak") {
       try {
-        const res = await fetch("http://localhost:5000/direct-login", {
+        const res = await fetch(`${process.env.API_URL}/direct-login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -54,7 +54,7 @@ const Login = () => {
     setLoading(true);
   
     try {
-      const response = await fetch("http://localhost:5000/send-otp", {
+      const response = await fetch(`${process.env.API_URL}/send-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

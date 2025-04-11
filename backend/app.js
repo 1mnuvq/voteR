@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: "https://vote-r.vercel.app",
+  origin: process.env.FRONT_END_URL,
   credentials: true 
 }));
 
