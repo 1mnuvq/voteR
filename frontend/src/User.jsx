@@ -14,7 +14,7 @@ const User = () => {
 
     const fetchUserDetails = async () => {
       try {
-        const response = await fetch(`${process.env.VITE_API_URL}/user/user-details`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/user/user-details`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

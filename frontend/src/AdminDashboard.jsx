@@ -36,9 +36,9 @@ const AdminDashboard = () => {
 
   const fetchData = async () => {
     try {
-      const resStudents = await fetch(`${process.env.VITE_API_URL}/admin/students`);
-      const resVotes = await fetch(`${process.env.VITE_API_URL}/admin/votes`);
-      const resPending = await fetch(`${process.env.VITE_API_URL}/admin/pending-candidates`);
+      const resStudents = await fetch(`${import.meta.env.VITE_API_URL}/admin/students`);
+      const resVotes = await fetch(`${import.meta.env.VITE_API_URL}/admin/votes`);
+      const resPending = await fetch(`${import.meta.env.VITE_API_URL}/admin/pending-candidates`);
 
       const dataStudents = await resStudents.json();
       const dataVotes = await resVotes.json();
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
 
   const handleApprove = async (collegeId) => {
     try {
-      const res = await fetch(`${process.env.VITE_API_URL}/admin/approve-candidate`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/admin/approve-candidate`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ collegeId })

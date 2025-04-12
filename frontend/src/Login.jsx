@@ -12,7 +12,7 @@ const Login = () => {
   
     if (collegeId === "admin_ronak" || collegeId === "user_ronak") {
       try {
-        const res = await fetch(`${process.env.VITE_API_URL}/otp/direct-login`, {
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/otp/direct-login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -54,7 +54,7 @@ const Login = () => {
     setLoading(true);
   
     try {
-      const response = await fetch(`${process.env.VITE_API_URL}/otp/send-otp`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/otp/send-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
