@@ -11,7 +11,7 @@ const Verify = ({ collegeId }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch(`${process.env.API_URL}/verify-otp`, {
+      const response = await fetch(`${process.env.API_URL}/otp/verify-otp`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
